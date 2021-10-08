@@ -13,7 +13,8 @@ setuptools.setup(
     namespace_packages=[],
     package_dir={'': '.'},
     packages=[
-        'rttmongo'
+        'rttmongo',
+        'rttmongo.examples'
     ],
     include_package_data=True,
     install_requires=[

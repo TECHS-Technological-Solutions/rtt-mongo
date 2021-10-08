@@ -3,5 +3,5 @@ __pycache__/
 .DS_Store
 .idea
 .venv
-rtt-mongo.egg-info
+rttmongo.egg-info
 pyproject.toml
