@@ -1,0 +1,7 @@
+__pycache__/
+.env
+.DS_Store
+.idea
+.venv
+rtt-mongo.egg-info
+pyproject.toml

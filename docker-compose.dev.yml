@@ -1,0 +1,33 @@
+version: '3.1'
+
+services:
+  mongo:
+    restart: always
+    image: mongo:4.4.3-bionic
+    environment:
+      - MONGO_INITDB_ROOT_USERNAME=${MONGODB_USER}
+      - MONGO_INITDB_ROOT_PASSWORD=${MONGODB_PASSWORD}
+    volumes:
+        - mongodb-data:/data/db
+    ports:
+        - 27017:27017
+    command: "--replSet rs0"
+    networks:
+      - default
+
+  rtt-mongo-server:
+    restart: always
+    build:
+      context: .
+      dockerfile: ./docker/Dockerfile
+    image: ghcr.io/TECHS-Technological-Solutions/rtt-mongo
+    env_file: .env
+    depends_on:
+      - mongo
+    ports:
+      - 8000:8000
+    networks:
+      - default
+
+volumes:
+  mongodb-data:

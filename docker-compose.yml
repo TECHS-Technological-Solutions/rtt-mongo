@@ -1,0 +1,14 @@
+version: '3.1'
+
+services:
+  rtt-mongo-server:
+    restart: always
+    build:
+      context: .
+      dockerfile: ./docker/Dockerfile
+    image: ghcr.io/TECHS-Technological-Solutions/rtt-mongo
+    env_file: .env
+    ports:
+      - 8000:8000
+    networks:
+      - default

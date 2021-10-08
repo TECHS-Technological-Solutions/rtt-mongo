@@ -1,0 +1,25 @@
+[[source]]
+url = "https://pypi.org/simple"
+verify_ssl = true
+name = "pypi"
+
+[packages]
+pymongo = ">=3.12.*"
+python-dotenv = ">=0.19.*"
+rttmongo = {editable = true, path = "."}
+pydantic = ">=1.8.*"
+asyncio = ">=3.4.*"
+typing-extensions = "==3.10.0.0"
+starlette = "*"
+uvicorn = "*"
+
+[dev-packages]
+pytest-asyncio = "*"
+websockets = "*"
+bandit = "*"
+pytest = "*"
+prospector = "==1.5.1"
+pylint = "==2.11.1"
+
+[requires]
+python_version = "3.9"
